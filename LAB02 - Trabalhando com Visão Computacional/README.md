@@ -10,7 +10,8 @@ O laboratório propõe experimentar alguns dos serviços Azure relacionado a Vis
 Detecte a localização de um ou mais rostos humanos em imagens, juntamente com atributos como pose, máscara facial e pontos de referência faciais.
 
 
-<img src="/workspaces/Microsoft-Azure-AI/LAB02 - Trabalhando com Visão Computacional/outputs/01-Processada.jpg" /> 
+<img src="/LAB02 - Trabalhando com Visão Computacional/outputs/01-Processada.jpg" /> 
+
 
 <details>
   <summary>Clique para exibir/ocultar o JSON</summary>
@@ -154,7 +155,7 @@ Detecte a localização de um ou mais rostos humanos em imagens, juntamente com 
 Use a API de leitura para extrair texto impresso e manuscrito em idiomas com suporte de imagens, PDFs e arquivos TIFF. O recurso de reconhecimento óptico de caracteres (OCR) oferece suporte a imagens e documentos com idiomas mistos e não requer a especificação do idioma.
 
 
-<img src="/workspaces/Microsoft-Azure-AI/LAB02 - Trabalhando com Visão Computacional/outputs/02-Processada.jpg" /> 
+<img src="/LAB02 - Trabalhando com Visão Computacional/outputs/02-Processada.jpg" /> 
 
 
 <details>
@@ -1398,7 +1399,7 @@ Use a API de leitura para extrair texto impresso e manuscrito em idiomas com sup
 Gere uma frase legível por humanos que descreva o conteúdo de uma imagem.
 
 
-<img src="/workspaces/Microsoft-Azure-AI/LAB02 - Trabalhando com Visão Computacional/outputs/03-Processada.jpg" /> 
+<img src="/LAB02 - Trabalhando com Visão Computacional/outputs/03-Processada.jpg" /> 
 
 <details>
   <summary>Clique para exibir/ocultar o JSON</summary>
