@@ -4,11 +4,13 @@
 
 ## Azure AI Speech
 
-O serviço de Fala de IA do Azure transcreve fala em texto e texto em fala audível. Você pode usar o AI Speech para criar um aplicativo que possa transcrever anotações de reuniões ou gerar texto a partir da gravação de entrevistas.
+O serviço de Fala de IA do Azure transcreve fala em texto e texto em fala audível. Pode-se usar o AI Speech para criar um aplicativo que possa transcrever anotações de reuniões ou gerar texto a partir da gravação de entrevistas.
 
-Neste exercício, você experimentará os recursos do Azure AI Speech usando o Azure AI Speech Studio.
+Neste exercício, utilizamos os recursos do Azure AI Speech usando o Azure AI Speech Studio.
 
-Foi selecionado o serviço a opção "Real-time speech to text" (Conversão de voz em texto em tempo real).
+### Execução
+
+Foi selecionado o serviço "Real-time speech to text" (Conversão de voz em texto em tempo real).
 
 Após importar o arquivo de audio WhatAICanDo.m4a e executar o teste, o texto narrado é exibido abaixo e o seu JSON correspondente.
 
@@ -896,6 +898,181 @@ Após importar o arquivo de audio WhatAICanDo.m4a e executar o teste, o texto na
 </details>
 
 
+## Analyze text with Language Studio
+
+Neste exercício, foi explorarado os recursos da Linguagem de IA do Azure analisando alguns exemplos de avaliações de hotéis. Utilizado o Language Studio para entender se as avaliações são majoritariamente positivas ou negativas.
+
+O Processamento de Linguagem Natural (PNL) é um ramo da IA que lida com a linguagem escrita e falada. Podemos usar a PNL para criar soluções que extraem significado semântico do texto ou da fala ou que formulem respostas significativas em linguagem natural.
+
+Por exemplo, suponha que a agente de viagens fictícia Margie's Travel incentive os clientes a enviar avaliações para estadias em hotéis. Pode-se usar o serviço Idioma para identificar frases-chave, determinar quais avaliações são positivas e quais são negativas ou analisar o texto de revisão em busca de menções a entidades conhecidas, como locais ou pessoas.
+
+O Serviço de Linguagem de IA do Azure inclui análise de texto e recursos de PNL. Estes incluem a identificação de frases-chave no texto e a classificação do texto com base no sentimento.
+
+### Execução
+
+Foi selecionado o serviço "Analisar sentimento e minerar opiniões" (Analyze sentiment and mine opinions) na aba " Classificar texto" (Classify text).
+
+Usamos o texto de exemplo do laboratório para ser analisado:
+
+" Tired hotel with poor service
+ The Royal Hotel, London, United Kingdom
+ 5/6/2018
+ This is an old hotel (has been around since 1950's) and the room furnishings are average - becoming a bit old now and require changing. The internet didn't work and had to come to one of their office rooms to check in for my flight home. The website says it's close to the British Museum, but it's too far to walk."
+
+Após clicar em RUN foi obtido a seguinte análise:
+
+<img src="/LAB03 - Processamento de Linguagem Natural/inputs/SentimentAndOpinionMiningTryout.jpg" /> 
+
+Observe que há um sentimento geral seguido de pontuações ao lado de três categorias, pontuação positiva, pontuação neutra, pontuação negativa. Em cada uma das categorias, é fornecida uma pontuação entre 0 e 1. Essas pontuações de confiança indicam a probabilidade de o texto fornecido ser um sentimento particular.
+
+<details>
+  <summary>Clique para exibir/ocultar o JSON</summary>
+  
+```json
+{
+    "documents": [
+        {
+            "id": "id__598",
+            "sentiment": "negative",
+            "confidenceScores": {
+                "positive": 0,
+                "neutral": 0.03,
+                "negative": 0.96
+            },
+            "sentences": [
+                {
+                    "sentiment": "negative",
+                    "confidenceScores": {
+                        "positive": 0,
+                        "neutral": 0.01,
+                        "negative": 0.98
+                    },
+                    "offset": 0,
+                    "length": 219,
+                    "text": " Tired hotel with poor service  The Royal Hotel, London, United Kingdom  5/6/2018  This is an old hotel (has been around since 1950's) and the room furnishings are average - becoming a bit old now and require changing. ",
+                    "targets": [
+                        {
+                            "sentiment": "negative",
+                            "confidenceScores": {
+                                "positive": 0.01,
+                                "negative": 0.99
+                            },
+                            "offset": 7,
+                            "length": 5,
+                            "text": "hotel",
+                            "relations": [
+                                {
+                                    "relationType": "assessment",
+                                    "ref": "#/documents/0/sentences/0/assessments/0"
+                                }
+                            ]
+                        },
+                        {
+                            "sentiment": "negative",
+                            "confidenceScores": {
+                                "positive": 0.01,
+                                "negative": 0.99
+                            },
+                            "offset": 23,
+                            "length": 7,
+                            "text": "service",
+                            "relations": [
+                                {
+                                    "relationType": "assessment",
+                                    "ref": "#/documents/0/sentences/0/assessments/1"
+                                }
+                            ]
+                        }
+                    ],
+                    "assessments": [
+                        {
+                            "sentiment": "negative",
+                            "confidenceScores": {
+                                "positive": 0.01,
+                                "negative": 0.99
+                            },
+                            "offset": 1,
+                            "length": 5,
+                            "text": "Tired",
+                            "isNegated": false
+                        },
+                        {
+                            "sentiment": "negative",
+                            "confidenceScores": {
+                                "positive": 0.01,
+                                "negative": 0.99
+                            },
+                            "offset": 18,
+                            "length": 4,
+                            "text": "poor",
+                            "isNegated": false
+                        }
+                    ]
+                },
+                {
+                    "sentiment": "negative",
+                    "confidenceScores": {
+                        "positive": 0,
+                        "neutral": 0.01,
+                        "negative": 0.99
+                    },
+                    "offset": 219,
+                    "length": 102,
+                    "text": "The internet didn't work and had to come to one of their office rooms to check in for my flight home. ",
+                    "targets": [
+                        {
+                            "sentiment": "negative",
+                            "confidenceScores": {
+                                "positive": 0,
+                                "negative": 1
+                            },
+                            "offset": 223,
+                            "length": 8,
+                            "text": "internet",
+                            "relations": [
+                                {
+                                    "relationType": "assessment",
+                                    "ref": "#/documents/0/sentences/1/assessments/0"
+                                }
+                            ]
+                        }
+                    ],
+                    "assessments": [
+                        {
+                            "sentiment": "negative",
+                            "confidenceScores": {
+                                "positive": 0,
+                                "negative": 1
+                            },
+                            "offset": 239,
+                            "length": 4,
+                            "text": "work",
+                            "isNegated": true
+                        }
+                    ]
+                },
+                {
+                    "sentiment": "negative",
+                    "confidenceScores": {
+                        "positive": 0.01,
+                        "neutral": 0.08,
+                        "negative": 0.91
+                    },
+                    "offset": 321,
+                    "length": 76,
+                    "text": "The website says it's close to the British Museum, but it's too far to walk.",
+                    "targets": [],
+                    "assessments": []
+                }
+            ],
+            "warnings": []
+        }
+    ],
+    "errors": [],
+    "modelVersion": "2022-11-01"
+}
+```
+</details>
 
 ## Referência
 
