@@ -21,7 +21,7 @@ No prompt foi adicionado um texto e uma imagem. O texto solicitava o que deveria
 
 O texto foi extraido conforme solicitado.
 
-<img src="/LAB05 - Trabalhando com IA Generativa/inputs/03 - Copilot.jpg" /> 
+<img src="/LAB05 - Trabalhando com IA Generativa/output/03 - Copilot.jpg" /> 
 
 ## Referência
 
